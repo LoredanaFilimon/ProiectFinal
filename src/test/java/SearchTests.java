@@ -15,6 +15,7 @@ public class SearchTests extends BasePage {
         SearchPage = new SearchPage(driver);
 
     }
+
     @Test
     public void WriteGraniteWordAndCheckTheResult() {
         SearchPage.EnterTextInSearchField("granite");
@@ -23,6 +24,7 @@ public class SearchTests extends BasePage {
         System.out.println(actualResult);
         Assert.assertTrue(actualResult.contains("Awesome Granite Chips"));
     }
+
     @Test
     public void WriteMetalWordAndCheckTheResult() {
         SearchPage.EnterTextInSearchField("metal");
@@ -31,6 +33,7 @@ public class SearchTests extends BasePage {
         System.out.println(actualResult);
         Assert.assertTrue(actualResult.contains("Awesome Metal Chair"));
     }
+
     @Test
     public void WriteSoftWordAndCheckTheResult() {
         SearchPage.EnterTextInSearchField("soft");
@@ -39,6 +42,7 @@ public class SearchTests extends BasePage {
         System.out.println(actualResult);
         Assert.assertTrue(actualResult.contains("Awesome Soft Shirt"));
     }
+
     @Test
     public void WriteGorgeousWordAndCheckTheResult() {
         SearchPage.EnterTextInSearchField("Gorgeous");
@@ -47,8 +51,17 @@ public class SearchTests extends BasePage {
         System.out.println(actualResult);
         Assert.assertTrue(actualResult.contains("Gorgeous Soft Pizza"));
 
+    }
 
-           }
+    @Test
+    public void WriteMouseWordAndCheckTheResult() {
+        SearchPage.EnterTextInSearchField("Mouse");
+        SearchPage.GetClickOnSearchButton();
+        String actualResult = driver.findElement(By.id("root")).getAttribute("innerText");
+        System.out.println(actualResult);
+        Assert.assertTrue(actualResult.contains("Practical Metal Mouse"));
 
 
+    }
 }
+
