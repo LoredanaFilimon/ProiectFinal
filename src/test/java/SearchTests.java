@@ -45,7 +45,7 @@ public class SearchTests extends BasePage {
 
     @Test
     public void WriteGorgeousWordAndCheckTheResult() {
-        SearchPage.EnterTextInSearchField("Gorgeous");
+        SearchPage.EnterTextInSearchField("gorgeous");
         SearchPage.GetClickOnSearchButton();
         String actualResult = driver.findElement(By.id("root")).getAttribute("innerText");
         System.out.println(actualResult);
@@ -55,12 +55,56 @@ public class SearchTests extends BasePage {
 
     @Test
     public void WriteMouseWordAndCheckTheResult() {
-        SearchPage.EnterTextInSearchField("Mouse");
+        SearchPage.EnterTextInSearchField("mouse");
         SearchPage.GetClickOnSearchButton();
         String actualResult = driver.findElement(By.id("root")).getAttribute("innerText");
         System.out.println(actualResult);
         Assert.assertTrue(actualResult.contains("Practical Metal Mouse"));
 
+    }
+    @Test
+    public void WriteHatWordAndCheckTheResult() {
+        SearchPage.EnterTextInSearchField("hat");
+        SearchPage.GetClickOnSearchButton();
+        String actualResult = driver.findElement(By.id("root")).getAttribute("innerText");
+        System.out.println(actualResult);
+        Assert.assertTrue(actualResult.contains("Incredible Concrete Hat"));
+
+    }
+    @Test
+    public void WriteRefinedWordAndCheckTheResult() {
+        SearchPage.EnterTextInSearchField("refined");
+        SearchPage.GetClickOnSearchButton();
+        String actualResult = driver.findElement(By.id("root")).getAttribute("innerText");
+        System.out.println(actualResult);
+        Assert.assertTrue(actualResult.contains("Refined Frozen Mouse"));
+
+    }
+    @Test
+    public void WriteLicensedWordAndCheckTheResult() {
+        SearchPage.EnterTextInSearchField("licensed");
+        SearchPage.GetClickOnSearchButton();
+        String actualResult = driver.findElement(By.id("root")).getAttribute("innerText");
+        System.out.println(actualResult);
+        Assert.assertTrue(actualResult.contains("Licensed Steel Gloves"));
+
+    }
+    @Test
+    public void WriteBaconWordAndCheckTheResult() {
+        SearchPage.EnterTextInSearchField("bacon");
+        SearchPage.GetClickOnSearchButton();
+        String actualResult = driver.findElement(By.id("root")).getAttribute("innerText");
+        System.out.println(actualResult);
+        Assert.assertTrue(actualResult.contains("Practical Wooden Bacon"));
+
+    }
+    @Test
+    public void WritePizzaWordAndCheckTheResult() {
+        SearchPage.EnterTextInSearchField("pizza");
+        SearchPage.GetClickOnSearchButton();
+        String actualResult = driver.findElement(By.id("root")).getAttribute("innerText");
+        System.out.println(actualResult);
+        Assert.assertTrue(actualResult.contains("Gorgeous Soft Pizza"));
 
     }
 }
