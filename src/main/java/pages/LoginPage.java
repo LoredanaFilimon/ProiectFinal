@@ -32,4 +32,10 @@ public class LoginPage extends BasePage {
     public void ClickOnLoginButton(){
         LoginButton.click();
     }
+
+    @FindBy(css = "#responsive-navbar-nav > div:nth-child(2) > span > span > button")
+    private WebElement LogOutButton;
+    public void ClickOnLogOutButton(){
+        LogOutButton.click();
+    }
 }

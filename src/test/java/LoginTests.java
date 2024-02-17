@@ -57,6 +57,43 @@ public class LoginTests extends BasePage {
         Assert.assertTrue(actualResult.contains("The user has been locked out."));
 
     }
+    @Test
+    public void LoginDinoUserAndThenLogOutDinoUser(){
+        LoginPage.GetClickOnLoginIcon();
+        LoginPage.EnterTextInUserNameField("dino");
+        LoginPage.EnterPasswordInUserPasswordField("choochoo");
+        LoginPage.ClickOnLoginButton();
+        LoginPage.ClickOnLogOutButton();
+        String actualResult = driver.findElement(By.cssSelector("#responsive-navbar-nav > div:nth-child(2) > span > span > span")).getAttribute("innerText");
+        System.out.println(actualResult);
+        Assert.assertTrue(actualResult.contains("Hello guest!"));
+
+    }
+    @Test
+    public void LoginBeetleUserAndThenLogOutBeetleUser(){
+        LoginPage.GetClickOnLoginIcon();
+        LoginPage.EnterTextInUserNameField("beetle");
+        LoginPage.EnterPasswordInUserPasswordField("choochoo");
+        LoginPage.ClickOnLoginButton();
+        LoginPage.ClickOnLogOutButton();
+        String actualResult = driver.findElement(By.cssSelector("#responsive-navbar-nav > div:nth-child(2) > span > span > span")).getAttribute("innerText");
+        System.out.println(actualResult);
+        Assert.assertTrue(actualResult.contains("Hello guest!"));
+
+    }
+    @Test
+    public void LoginTurtleUserAndThenLogOutTurtleUser(){
+        LoginPage.GetClickOnLoginIcon();
+        LoginPage.EnterTextInUserNameField("turtle");
+        LoginPage.EnterPasswordInUserPasswordField("choochoo");
+        LoginPage.ClickOnLoginButton();
+        LoginPage.ClickOnLogOutButton();
+        String actualResult = driver.findElement(By.cssSelector("#responsive-navbar-nav > div:nth-child(2) > span > span > span")).getAttribute("innerText");
+        System.out.println(actualResult);
+        Assert.assertTrue(actualResult.contains("Hello guest!"));
+
+    }
+
 
 
 }
